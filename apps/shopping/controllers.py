@@ -52,7 +52,7 @@ def load_data():
         orderby=(db.shopping_list.purchased, db.shopping_list.id)
     ).as_list()
 
-    items.sort(key=lambda item: (item['purchased'], item['id']))
+    #items.sort(key=lambda item: (item['purchased'], item['id']))
     return dict(items=items)
 
 @action('add_item', method='POST')

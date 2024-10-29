@@ -39,7 +39,12 @@ let app = {
         });
       },
       sortItems() {
-        this.items.sort((a, b) => a.purchased - b.purchased || b.id - a.id);
+        this.items.sort((a, b) => {
+          if (a.purchased === b.purchased) {
+            return a.id - b.id;
+          }
+          return a.purchased - b.purchased;
+        });
       }
     },
     mounted() {
